@@ -1,0 +1,15 @@
+1. git clone <clone url> (only very first time)
+2. git pull
+3. git checkout <your branch>
+4. cd beans (only very first time or if need contain new beans)
+5. mvn clean package -DskipTests -Dmaven.test.skip=true (only very first time or if need contain new beans)
+6. cd .. (only very first time or if need contain new beans)
+7. mvn install:install-file -Dfile=beans/target/class-api.jar -DgroupId=com.smile -DartifactId=class-beans -Dversion=1.0.0-SNAPSHOT -Dpackaging=jar  (only very first time or if need contain new beans. Change the version number if needed)
+8. mvn clean package -DskipTests -Dmaven.test.skip=true
+9. <do your changes>
+10. git status
+11. git add .
+12. git status
+13. git commit -am"<commit message>"
+14. git push origin <your branch>
+15. Go to gitlab from browser and add merge request when your change is done.
