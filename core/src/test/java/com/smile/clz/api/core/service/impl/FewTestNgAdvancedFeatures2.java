@@ -17,7 +17,7 @@ public class FewTestNgAdvancedFeatures2 extends BaseManager {
   @Autowired
   private TestNgExecutionFlow testNgExecutionFlow;
 
-  @Test ()
+  @Test (groups = { "functest" })
   public void testMethod1() {
     try {
       LOGGER.info("Executing test case 1 in FewTestNgAdvancedFeatures2");
