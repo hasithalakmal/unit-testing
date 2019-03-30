@@ -1,15 +1,6 @@
 package com.smile.clz.api.core.service.impl;
 
-import static org.testng.Assert.fail;
-
-import com.smile.clz.api.core.ErrorCode;
-import com.smile.clz.api.core.exception.ClassApiException;
 import com.smile.clz.api.core.service.BaseManager;
-import com.smile.clz.api.core.service.TddDemo;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 
 public class TddDemoTest extends BaseManager {
 

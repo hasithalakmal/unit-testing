@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="transactionManager"
-          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="classDataSource" />
-    </bean>
+  <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+    id="transactionManager">
+    <property name="dataSource" ref="classDataSource"/>
+  </bean>
 
-    <bean id="classDataSource" factory-bean="classDataSourceConfig" factory-method="dataSource">
-    </bean>
+  <bean factory-bean="classDataSourceConfig" factory-method="dataSource" id="classDataSource">
+  </bean>
 
-    <bean id="classDataSourceConfig" class="com.smile.clz.api.db.EmbeddedDataSourceConfig">
-    </bean>
+  <bean class="com.smile.clz.api.db.EmbeddedDataSourceConfig" id="classDataSourceConfig">
+  </bean>
 
 </beans>

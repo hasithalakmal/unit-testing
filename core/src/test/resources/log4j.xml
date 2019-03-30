@@ -3,42 +3,42 @@
 
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
-    <appender name="CONSOLE" class="com.smile.clz.api.core.config.SmileDailyRollingFileAppender">
-        <param name="file" value="/var/log/class-api/class-api.log"/>
-        <param name="maxNumberOfDays" value="5" />
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss.SSSS}], %-5p, %C %t - %m%n"/>
-        </layout>
-    </appender>
+  <appender class="com.smile.clz.api.core.config.SmileDailyRollingFileAppender" name="CONSOLE">
+    <param name="file" value="/var/log/class-api/class-api.log"/>
+    <param name="maxNumberOfDays" value="5"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss.SSSS}], %-5p, %C %t - %m%n"/>
+    </layout>
+  </appender>
 
-    <!-- Suppress success logging from InteractiveAuthenticationSuccessEvent -->
-    <logger name="org.springframework.security">
-        <level value="ERROR"/>
-    </logger>
+  <!-- Suppress success logging from InteractiveAuthenticationSuccessEvent -->
+  <logger name="org.springframework.security">
+    <level value="ERROR"/>
+  </logger>
 
-    <logger name="org.apache">
-        <level value="WARN"/>
-    </logger>
+  <logger name="org.apache">
+    <level value="WARN"/>
+  </logger>
 
-    <logger name="com.atomikos">
-        <level value="WARN"/>
-    </logger>
+  <logger name="com.atomikos">
+    <level value="WARN"/>
+  </logger>
 
-    <logger name="org.apache.velocity">
-        <level value="FATAL"/>
-    </logger>
+  <logger name="org.apache.velocity">
+    <level value="FATAL"/>
+  </logger>
 
-    <logger name="org.springframework">
-        <level value="WARN"/>
-    </logger>
+  <logger name="org.springframework">
+    <level value="WARN"/>
+  </logger>
 
-    <logger name="net.cake">
-        <level value="DEBUG"/>
-    </logger>
+  <logger name="net.cake">
+    <level value="DEBUG"/>
+  </logger>
 
-    <root>
-        <level value="DEBUG"/>
-        <appender-ref ref="CONSOLE"/>
-    </root>
+  <root>
+    <level value="DEBUG"/>
+    <appender-ref ref="CONSOLE"/>
+  </root>
 
 </log4j:configuration>

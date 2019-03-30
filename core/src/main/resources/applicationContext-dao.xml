@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+<beans xmlns:tx="http://www.springframework.org/schema/tx"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <tx:annotation-driven proxy-target-class="true"
-                          transaction-manager="transactionManager" />
+  <tx:annotation-driven proxy-target-class="true"
+    transaction-manager="transactionManager"/>
 
-    <bean id="transactionManager"
-          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="classDataSource" />
-    </bean>
+  <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+    id="transactionManager">
+    <property name="dataSource" ref="classDataSource"/>
+  </bean>
 
-    <bean id="classDataSource" class="org.apache.commons.dbcp.BasicDataSource"
-          destroy-method="close"
-          lazy-init="true">
+  <bean class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"
+    id="classDataSource"
+    lazy-init="true">
 
-        <property name="driverClassName" value="${profiledb.jdbc.driverClassName}"/>
-        <property name="url" value="${profiledb.jdbc.url}"/>
-        <property name="username" value="${profiledb.jdbc.username}"/>
-        <property name="password" value="${profiledb.jdbc.password}"/>
+    <property name="driverClassName" value="${profiledb.jdbc.driverClassName}"/>
+    <property name="url" value="${profiledb.jdbc.url}"/>
+    <property name="username" value="${profiledb.jdbc.username}"/>
+    <property name="password" value="${profiledb.jdbc.password}"/>
 
-        <property name="defaultAutoCommit" value="true"/>
-        <property name="validationQuery" value="SELECT 1"/>
-        <property name="testOnBorrow" value="${profiledb.test.on.borrow}"/>
-        <property name="initialSize" value="${profiledb.initial.size}"/>
-        <property name="maxActive" value="${profiledb.max.active}"/>
-        <property name="maxIdle" value="${profiledb.max.idle}"/>
-        <property name="minIdle" value="${profiledb.min.idle}"/>
-        <property name="maxWait" value="${profiledb.max.wait}"/>
-        <property name="numTestsPerEvictionRun" value="${profiledb.num.tests.per.eviction.run}"/>
-        <property name="timeBetweenEvictionRunsMillis" value="${profiledb.time.between.eviction.run}"/>
-        <property name="minEvictableIdleTimeMillis" value="${profiledb.min.evictable.idle.time}"/>
-    </bean>
+    <property name="defaultAutoCommit" value="true"/>
+    <property name="validationQuery" value="SELECT 1"/>
+    <property name="testOnBorrow" value="${profiledb.test.on.borrow}"/>
+    <property name="initialSize" value="${profiledb.initial.size}"/>
+    <property name="maxActive" value="${profiledb.max.active}"/>
+    <property name="maxIdle" value="${profiledb.max.idle}"/>
+    <property name="minIdle" value="${profiledb.min.idle}"/>
+    <property name="maxWait" value="${profiledb.max.wait}"/>
+    <property name="numTestsPerEvictionRun" value="${profiledb.num.tests.per.eviction.run}"/>
+    <property name="timeBetweenEvictionRunsMillis" value="${profiledb.time.between.eviction.run}"/>
+    <property name="minEvictableIdleTimeMillis" value="${profiledb.min.evictable.idle.time}"/>
+  </bean>
 
 </beans>

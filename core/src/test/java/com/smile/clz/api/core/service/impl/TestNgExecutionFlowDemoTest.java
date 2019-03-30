@@ -4,12 +4,10 @@ import static org.testng.Assert.fail;
 
 import com.smile.clz.api.core.exception.ClassApiException;
 import com.smile.clz.api.core.service.BaseManager;
-import com.smile.clz.api.core.service.TddDemo;
 import com.smile.clz.api.core.service.TestNgExecutionFlow;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;

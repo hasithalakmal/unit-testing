@@ -17,7 +17,7 @@ public class FewTestNgAdvancedFeatures1 extends BaseManager {
   @Autowired
   private TestNgExecutionFlow testNgExecutionFlow;
 
-  @Test (enabled = false)
+  @Test(enabled = false)
   public void testMethod1() {
     try {
       LOGGER.info("Executing test case 1 in FewTestNgAdvancedFeatures1");
@@ -27,7 +27,7 @@ public class FewTestNgAdvancedFeatures1 extends BaseManager {
     }
   }
 
-  @Test (groups = { "functest", "checkintest" })
+  @Test(groups = {"functest", "checkintest"})
   public void testMethod2() {
     try {
       LOGGER.info("Executing test case 2 in FewTestNgAdvancedFeatures1");
@@ -37,7 +37,7 @@ public class FewTestNgAdvancedFeatures1 extends BaseManager {
     }
   }
 
-  @Test (groups = { "checkintest" })
+  @Test(groups = {"checkintest"})
   public void testMethod3() {
     try {
       LOGGER.info("Executing test case 3 in FewTestNgAdvancedFeatures1");
@@ -47,7 +47,7 @@ public class FewTestNgAdvancedFeatures1 extends BaseManager {
     }
   }
 
-  @Test (groups = { "functest" })
+  @Test(groups = {"functest"})
   public void testMethod4() {
     try {
       LOGGER.info("Executing test case 4 in FewTestNgAdvancedFeatures1");

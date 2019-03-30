@@ -1,12 +1,23 @@
 package com.smile.clz.api.beans;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import java.io.Serializable;
+import java.util.List;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class WeatherData {
+@JsonInclude(
+    value = JsonInclude.Include.NON_NULL
+)
+@JsonIgnoreProperties(
+    ignoreUnknown = true
+)
+public class WeatherData implements Serializable {
+
   private Location coord;
-  private Weather weather;
+  private List<Weather> weather;
   private MainData main;
 
   public Location getCoord() {
@@ -17,11 +28,11 @@ public class WeatherData {
     this.coord = coord;
   }
 
-  public Weather getWeather() {
+  public List<Weather> getWeather() {
     return weather;
   }
 
-  public void setWeather(Weather weather) {
+  public void setWeather(List<Weather> weather) {
     this.weather = weather;
   }
 

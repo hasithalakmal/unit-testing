@@ -1,8 +1,9 @@
 package com.smile.clz.api.webapp.controller;
 
+import com.smile.clz.api.beans.Class;
 import com.smile.clz.api.core.exception.ClassApiException;
 import com.smile.clz.api.core.service.ClassManager;
-import com.smile.clz.api.beans.Class;
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import java.util.List;
-
 /**
  * todo
  *
@@ -25,73 +24,74 @@ import java.util.List;
  **/
 @Controller
 public class ClassController extends AbstractRestController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ClassController.class);
 
-    @Autowired
-    private ClassManager classManager;
+  private static final Logger LOGGER = LoggerFactory.getLogger(ClassController.class);
 
-    @RequestMapping(value = "ping", method = RequestMethod.GET)
-    @ResponseStatus( HttpStatus.OK )
-    @ResponseBody
-    public String ping() {
-        String currentTime = Long.toString(System.currentTimeMillis());
-        LOGGER.info("Ping request {}", currentTime);
-        return currentTime;
-    }
+  @Autowired
+  private ClassManager classManager;
 
-    @RequestMapping(value = "classes/className/{className}",
-            method = RequestMethod.GET,
-            produces = {MediaType.APPLICATION_JSON_VALUE})
-    @ResponseStatus( HttpStatus.OK )
-    @ResponseBody
-    public Class getClassByClassName(@PathVariable String className) throws ClassApiException {
-        LOGGER.info("Request received to get class by class name [{}]", className);
-        Class classObj;
-        classObj = classManager.getClassByClassName(className);
+  @RequestMapping(value = "ping", method = RequestMethod.GET)
+  @ResponseStatus(HttpStatus.OK)
+  @ResponseBody
+  public String ping() {
+    String currentTime = Long.toString(System.currentTimeMillis());
+    LOGGER.info("Ping request {}", currentTime);
+    return currentTime;
+  }
 
-        LOGGER.info("Return response for get class by class name");
-        return classObj;
-    }
+  @RequestMapping(value = "classes/className/{className}",
+      method = RequestMethod.GET,
+      produces = {MediaType.APPLICATION_JSON_VALUE})
+  @ResponseStatus(HttpStatus.OK)
+  @ResponseBody
+  public Class getClassByClassName(@PathVariable String className) throws ClassApiException {
+    LOGGER.info("Request received to get class by class name [{}]", className);
+    Class classObj;
+    classObj = classManager.getClassByClassName(className);
 
-    @RequestMapping(value = "classes",
-            method = RequestMethod.GET,
-            produces = {MediaType.APPLICATION_JSON_VALUE})
-    @ResponseStatus( HttpStatus.OK )
-    @ResponseBody
-    public List<Class> getAllClasses() throws ClassApiException {
-        LOGGER.info("Request received to get all classes");
-        List<Class> listOfClasses = null;
-        listOfClasses = classManager.getAllClasses();
+    LOGGER.info("Return response for get class by class name");
+    return classObj;
+  }
 
-        LOGGER.info("Return response for get all classes");
-        return listOfClasses;
-    }
+  @RequestMapping(value = "classes",
+      method = RequestMethod.GET,
+      produces = {MediaType.APPLICATION_JSON_VALUE})
+  @ResponseStatus(HttpStatus.OK)
+  @ResponseBody
+  public List<Class> getAllClasses() throws ClassApiException {
+    LOGGER.info("Request received to get all classes");
+    List<Class> listOfClasses = null;
+    listOfClasses = classManager.getAllClasses();
 
-    @RequestMapping(value = "classes/gradeName/{gradeName}",
-            method = RequestMethod.GET,
-            produces = {MediaType.APPLICATION_JSON_VALUE})
-    @ResponseStatus( HttpStatus.OK )
-    @ResponseBody
-    public List<Class> getAllClassesByGradeName(@PathVariable String gradeName) throws ClassApiException {
-        LOGGER.info("Request received to get all class by grade name [{}]", gradeName);
-        List<Class> listOfClasses = null;
-        listOfClasses = classManager.getAllClassesByGradeName(gradeName);
+    LOGGER.info("Return response for get all classes");
+    return listOfClasses;
+  }
 
-        LOGGER.info("Return response for get  all class by grade name");
-        return listOfClasses;
-    }
+  @RequestMapping(value = "classes/gradeName/{gradeName}",
+      method = RequestMethod.GET,
+      produces = {MediaType.APPLICATION_JSON_VALUE})
+  @ResponseStatus(HttpStatus.OK)
+  @ResponseBody
+  public List<Class> getAllClassesByGradeName(@PathVariable String gradeName) throws ClassApiException {
+    LOGGER.info("Request received to get all class by grade name [{}]", gradeName);
+    List<Class> listOfClasses = null;
+    listOfClasses = classManager.getAllClassesByGradeName(gradeName);
 
-    @RequestMapping(value = "classes/zoneName/{zoneName}",
-            method = RequestMethod.GET,
-            produces = {MediaType.APPLICATION_JSON_VALUE})
-    @ResponseStatus( HttpStatus.OK )
-    @ResponseBody
-    public List<Class> getAllClassesByZoneName(@PathVariable String zoneName) throws ClassApiException {
-        LOGGER.info("Request received to get all class by zone name [{}]", zoneName);
-        List<Class> listOfClasses = null;
-        listOfClasses = classManager.getAllClassesByZoneName(zoneName);
+    LOGGER.info("Return response for get  all class by grade name");
+    return listOfClasses;
+  }
 
-        LOGGER.info("Return response for get  all class by zone name");
-        return listOfClasses;
-    }
+  @RequestMapping(value = "classes/zoneName/{zoneName}",
+      method = RequestMethod.GET,
+      produces = {MediaType.APPLICATION_JSON_VALUE})
+  @ResponseStatus(HttpStatus.OK)
+  @ResponseBody
+  public List<Class> getAllClassesByZoneName(@PathVariable String zoneName) throws ClassApiException {
+    LOGGER.info("Request received to get all class by zone name [{}]", zoneName);
+    List<Class> listOfClasses = null;
+    listOfClasses = classManager.getAllClassesByZoneName(zoneName);
+
+    LOGGER.info("Return response for get  all class by zone name");
+    return listOfClasses;
+  }
 }

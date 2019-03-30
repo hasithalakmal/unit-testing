@@ -1,13 +1,23 @@
 package com.smile.clz.api.beans;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import java.io.Serializable;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class Weather {
-    private int id;
-    private String main;
-    private String description;
+@JsonInclude(
+    value = JsonInclude.Include.NON_NULL
+)
+@JsonIgnoreProperties(
+    ignoreUnknown = true
+)
+public class Weather implements Serializable {
+
+  private int id;
+  private String main;
+  private String description;
 
   public int getId() {
     return id;

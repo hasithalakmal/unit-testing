@@ -1,17 +1,24 @@
 package com.smile.clz.api.beans;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class MainData {
+@JsonInclude(
+    value = JsonInclude.Include.NON_NULL
+)
+@JsonIgnoreProperties(
+    ignoreUnknown = true
+)
+public class MainData implements Serializable {
 
   private BigDecimal temp;
   private BigDecimal pressure;
   private BigDecimal humidity;
-  private BigDecimal temp_min;
-  private BigDecimal temp_max;
 
   public BigDecimal getTemp() {
     return temp;
@@ -37,22 +44,6 @@ public class MainData {
     this.humidity = humidity;
   }
 
-  public BigDecimal getTemp_min() {
-    return temp_min;
-  }
-
-  public void setTemp_min(BigDecimal temp_min) {
-    this.temp_min = temp_min;
-  }
-
-  public BigDecimal getTemp_max() {
-    return temp_max;
-  }
-
-  public void setTemp_max(BigDecimal temp_max) {
-    this.temp_max = temp_max;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -69,8 +60,6 @@ public class MainData {
         .append(temp, mainData.temp)
         .append(pressure, mainData.pressure)
         .append(humidity, mainData.humidity)
-        .append(temp_min, mainData.temp_min)
-        .append(temp_max, mainData.temp_max)
         .isEquals();
   }
 
@@ -80,8 +69,6 @@ public class MainData {
         .append(temp)
         .append(pressure)
         .append(humidity)
-        .append(temp_min)
-        .append(temp_max)
         .toHashCode();
   }
 
@@ -91,8 +78,6 @@ public class MainData {
         .append("temp", temp)
         .append("pressure", pressure)
         .append("humidity", humidity)
-        .append("temp_min", temp_min)
-        .append("temp_max", temp_max)
         .toString();
   }
 }

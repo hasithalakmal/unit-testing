@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd"
-       default-lazy-init="true">
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-lazy-init="true"
+  xmlns="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
-    <import resource="classpath:/applicationContext-dao-test.xml"/>
-    <!--<import resource="classpath:/applicationContext-dao.xml"/>-->
-    <import resource="classpath:/applicationContext-service.xml"/>
+  <import resource="classpath:/applicationContext-dao-test.xml"/>
+  <!--<import resource="classpath:/applicationContext-dao.xml"/>-->
+  <import resource="classpath:/applicationContext-service.xml"/>
 
-    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="ignoreUnresolvablePlaceholders" value="true"/>
-        <property name="locations">
-            <list>
-                <value>classpath:class-api/class-api.properties</value>
-            </list>
-        </property>
-    </bean>
+  <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" id="propertyConfigurer">
+    <property name="ignoreUnresolvablePlaceholders" value="true"/>
+    <property name="locations">
+      <list>
+        <value>classpath:class-api/class-api.properties</value>
+      </list>
+    </property>
+  </bean>
 </beans>

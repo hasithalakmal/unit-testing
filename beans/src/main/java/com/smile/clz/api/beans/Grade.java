@@ -2,7 +2,6 @@ package com.smile.clz.api.beans;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-
 import java.sql.Timestamp;
 
 /**
@@ -12,96 +11,97 @@ import java.sql.Timestamp;
  * @date 10/28/17
  **/
 @JsonInclude(
-        value = JsonInclude.Include.NON_NULL
+    value = JsonInclude.Include.NON_NULL
 )
 @JsonIgnoreProperties(
-        ignoreUnknown = true
+    ignoreUnknown = true
 )
 public class Grade {
-    private int gradeId;
-    private String gradeName;
-    protected Zone zone;
-    private String gradeState;
-    private Timestamp createdTime;
-    private int  createdUserId;
-    private Timestamp updatedTime;
-    private int  updatedUserId;
 
-    public int getGradeId() {
-        return gradeId;
-    }
+  protected Zone zone;
+  private int gradeId;
+  private String gradeName;
+  private String gradeState;
+  private Timestamp createdTime;
+  private int createdUserId;
+  private Timestamp updatedTime;
+  private int updatedUserId;
 
-    public void setGradeId(int gradeId) {
-        this.gradeId = gradeId;
-    }
+  public int getGradeId() {
+    return gradeId;
+  }
 
-    public String getGradeName() {
-        return gradeName;
-    }
+  public void setGradeId(int gradeId) {
+    this.gradeId = gradeId;
+  }
 
-    public void setGradeName(String gradeName) {
-        this.gradeName = gradeName;
-    }
+  public String getGradeName() {
+    return gradeName;
+  }
 
-    public Zone getZone() {
-        return zone;
-    }
+  public void setGradeName(String gradeName) {
+    this.gradeName = gradeName;
+  }
 
-    public void setZone(Zone zone) {
-        this.zone = zone;
-    }
+  public Zone getZone() {
+    return zone;
+  }
 
-    public String getGradeState() {
-        return gradeState;
-    }
+  public void setZone(Zone zone) {
+    this.zone = zone;
+  }
 
-    public void setGradeState(String gradeState) {
-        this.gradeState = gradeState;
-    }
+  public String getGradeState() {
+    return gradeState;
+  }
 
-    public Timestamp getCreatedTime() {
-        return createdTime;
-    }
+  public void setGradeState(String gradeState) {
+    this.gradeState = gradeState;
+  }
 
-    public void setCreatedTime(Timestamp createdTime) {
-        this.createdTime = createdTime;
-    }
+  public Timestamp getCreatedTime() {
+    return createdTime;
+  }
 
-    public int getCreatedUserId() {
-        return createdUserId;
-    }
+  public void setCreatedTime(Timestamp createdTime) {
+    this.createdTime = createdTime;
+  }
 
-    public void setCreatedUserId(int createdUserId) {
-        this.createdUserId = createdUserId;
-    }
+  public int getCreatedUserId() {
+    return createdUserId;
+  }
 
-    public Timestamp getUpdatedTime() {
-        return updatedTime;
-    }
+  public void setCreatedUserId(int createdUserId) {
+    this.createdUserId = createdUserId;
+  }
 
-    public void setUpdatedTime(Timestamp updatedTime) {
-        this.updatedTime = updatedTime;
-    }
+  public Timestamp getUpdatedTime() {
+    return updatedTime;
+  }
 
-    public int getUpdatedUserId() {
-        return updatedUserId;
-    }
+  public void setUpdatedTime(Timestamp updatedTime) {
+    this.updatedTime = updatedTime;
+  }
 
-    public void setUpdatedUserId(int updatedUserId) {
-        this.updatedUserId = updatedUserId;
-    }
+  public int getUpdatedUserId() {
+    return updatedUserId;
+  }
 
-    @Override
-    public String toString() {
-        return "Grade{" +
-                "gradeId=" + gradeId +
-                ", gradeName='" + gradeName + '\'' +
-                ", zone=" + zone +
-                ", gradeState='" + gradeState + '\'' +
-                ", createdTime=" + createdTime +
-                ", createdUserId=" + createdUserId +
-                ", updatedTime=" + updatedTime +
-                ", updatedUserId=" + updatedUserId +
-                '}';
-    }
+  public void setUpdatedUserId(int updatedUserId) {
+    this.updatedUserId = updatedUserId;
+  }
+
+  @Override
+  public String toString() {
+    return "Grade{" +
+        "gradeId=" + gradeId +
+        ", gradeName='" + gradeName + '\'' +
+        ", zone=" + zone +
+        ", gradeState='" + gradeState + '\'' +
+        ", createdTime=" + createdTime +
+        ", createdUserId=" + createdUserId +
+        ", updatedTime=" + updatedTime +
+        ", updatedUserId=" + updatedUserId +
+        '}';
+  }
 }
