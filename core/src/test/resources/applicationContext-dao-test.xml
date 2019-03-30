@@ -5,7 +5,6 @@
 
     <bean id="transactionManager"
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <!--<property name="dataSource" ref="classDataSource" />-->
         <property name="dataSource" ref="classDataSource" />
     </bean>
 

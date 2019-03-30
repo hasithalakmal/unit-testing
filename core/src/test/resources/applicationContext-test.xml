@@ -4,6 +4,7 @@
        default-lazy-init="true">
 
     <import resource="classpath:/applicationContext-dao-test.xml"/>
+    <!--<import resource="classpath:/applicationContext-dao.xml"/>-->
     <import resource="classpath:/applicationContext-service.xml"/>
 
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
