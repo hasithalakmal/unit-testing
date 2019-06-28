@@ -5,7 +5,7 @@
 
 
   <appender class="com.smile.clz.api.core.config.SmileDailyRollingFileAppender" name="profileAppender">
-    <param name="file" value="/var/log/class-api/class-api.log"/>
+    <param name="file" value="D:\class-api.log"/>
     <param name="maxNumberOfDays" value="5"/>
     <layout class="org.apache.log4j.PatternLayout">
       <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss.SSSS}], %-5p, %C %t - %m%n"/>
@@ -34,7 +34,7 @@
     <level value="WARN"/>
   </logger>
 
-  <logger name="net.cake">
+  <logger name="com.smile">
     <level value="INFO"/>
   </logger>
 

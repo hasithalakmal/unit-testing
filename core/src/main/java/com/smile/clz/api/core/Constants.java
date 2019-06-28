@@ -9,7 +9,6 @@ package com.smile.clz.api.core;
 public final class Constants {
 
   public static final String APPLICATION_JSON = "application/json";
-  public static final String IDM_APPLICATION_JSON = "application/vnd.cake.idm.v2+json";
   public static final int DEFAULT_CONTEXT_TYPE_ID = 2;
   public static final String WHITE_SPACE = " ";
   //Hub Events
