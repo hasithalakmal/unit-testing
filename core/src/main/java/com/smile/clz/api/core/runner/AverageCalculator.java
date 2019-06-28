@@ -12,7 +12,7 @@ public class AverageCalculator {
     int totalMarks = 350;
     int numberOfSubjects = 4;
     LOGGER.info("Let's calculate the average...");
-    double applesPerStudent = MathsUtil.divideTwoNumbers(totalMarks, numberOfSubjects);
-    LOGGER.info("Average should be [87.5]. The calculated value is [{}]", applesPerStudent);
+    double average = MathsUtil.divideTwoNumbers(totalMarks, numberOfSubjects);
+    LOGGER.info("Average should be [87.5]. The calculated value is [{}]", average);
   }
 }

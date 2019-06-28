@@ -6,6 +6,7 @@ import com.smile.clz.api.beans.WeatherData;
 import com.smile.clz.api.core.exception.ClassApiException;
 import com.smile.clz.api.core.service.BaseManager;
 import com.smile.clz.api.core.service.WeatherDataManger;
+import java.math.BigDecimal;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +28,8 @@ public class WeatherDataMangerTest extends BaseManager {
       WeatherData weatherData = weatherDataManger.getWeatherDataByCityName("London,uk");
       Assert.assertNotNull(weatherData);
       Assert.assertNotNull(weatherData.getCoord());
-      Assert.assertEquals(weatherData.getCoord().getLat(), "51.51");
-      Assert.assertEquals(weatherData.getCoord().getLon(), "-0.13");
+      Assert.assertEquals(weatherData.getCoord().getLat(), new BigDecimal("51.51"));
+      Assert.assertEquals(weatherData.getCoord().getLon(), new BigDecimal("-0.13"));
     } catch (ClassApiException pae) {
       fail("Success scenario should not fail", pae);
     }
