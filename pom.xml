@@ -116,7 +116,16 @@
       <artifactId>commons-beanutils</artifactId>
       <version>1.8.2</version>
     </dependency>
-
+    <dependency>
+      <groupId>org.openjdk.jmh</groupId>
+      <artifactId>jmh-core</artifactId>
+      <version>${jmh.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjdk.jmh</groupId>
+      <artifactId>jmh-generator-annprocess</artifactId>
+      <version>${jmh.version}</version>
+    </dependency>
   </dependencies>
 
   <properties>
@@ -139,6 +148,8 @@
     <velocity.version>1.7</velocity.version>
     <keycloak.core.version>1.9.0.Final</keycloak.core.version>
     <springfox.swagger2.version>2.4.0</springfox.swagger2.version>
+    <jmh.version>1.21</jmh.version>
+
   </properties>
 
   <build>
