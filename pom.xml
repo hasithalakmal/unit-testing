@@ -134,7 +134,7 @@
     <dbunit.operation.type>CLEAN_INSERT</dbunit.operation.type>
     <jdbc.groupId>mysql</jdbc.groupId>
     <jdbc.artifactId>mysql-connector-java</jdbc.artifactId>
-    <jdbc.version>5.1.21</jdbc.version>
+    <jdbc.version>8.0.28</jdbc.version>
 
     <spring.version>4.3.6.RELEASE</spring.version>
     <testng.version>6.9.9</testng.version>
