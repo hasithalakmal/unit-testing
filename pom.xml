@@ -136,7 +136,7 @@
     <jdbc.artifactId>mysql-connector-java</jdbc.artifactId>
     <jdbc.version>5.1.21</jdbc.version>
 
-    <spring.version>4.3.6.RELEASE</spring.version>
+    <spring.version>5.2.21.RELEASE</spring.version>
     <testng.version>6.9.9</testng.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
